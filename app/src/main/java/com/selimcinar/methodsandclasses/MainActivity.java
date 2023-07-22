@@ -45,6 +45,7 @@ public class MainActivity extends AppCompatActivity {
         //Private öğelerde Getter ve setter ile değişken değiştirme yada yazdırma
         //Setter olayı değer değiştirme
         homer.setName("Homer Simpson");
+        homer.setAge(70);
         //Getter olayı değer çağırma yazdırma
         System.out.println(homer.getName());
     }
