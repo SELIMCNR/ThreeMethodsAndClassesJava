@@ -1,13 +1,20 @@
 package com.selimcinar.methodsandclasses;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.os.PersistableBundle;
 
 public class MainActivity extends AppCompatActivity {
     //Global , Local değişkenler
     //Global değişken
     String username="";
+    String musician1;
+    String musician2;
+    int age1;
+    int age2;
+    String instrument;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,10 +28,16 @@ public class MainActivity extends AppCompatActivity {
         testMethod();
         System.out.println(math(3,5));
         System.out.println(newMethod("Selim"));
-        username=""; // global değişkene değer atama
+        username="James"; // global değişkene değer atama
+        musician1="lars";
+        musician2="kirk" ;
+        age1=5;
+        age2=25;
 
         makeMusicians();
+
         makeSimpsons();
+
     }
     //Sınıf en büyük parça metotlar küçük parça
     //Birden fazla aktivite birden fazla sınıf ve birden fazla metot olabilir.
@@ -42,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         //Constructorda değişkenin değerini değiştirme
         //Getter olayı değer yazdırma
         System.out.println(homer.getName());
+
         //Private öğelerde Getter ve setter ile değişken değiştirme yada yazdırma
         //Setter olayı değer değiştirme
         homer.setName("Homer Simpson");
@@ -56,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
         Musicians james = new Musicians("James","Guitar",50);
         System.out.println(james.instrument);
     }
+
+
 
 
     public void testMethod(){
@@ -83,18 +99,22 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+        //Aktivite oluşumundan sonraki devam eden süreçte.
         super.onResume();
         System.out.println("on resume called");
+
     }
 
     @Override
     protected void onStop() {
+        //geçici duraklatıldığında
         super.onStop();
         System.out.println("on stop called");
     }
 
     @Override
     protected void onPause() {
+        // tamamen duraklatıldığında
         super.onPause();
         System.out.println("on pause called");
     }
